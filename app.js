@@ -8,7 +8,9 @@ var render = require('koa-views');
 var staticServer = require('koa-static');
 var session = require('koa-generic-session');
 var redisStore = require('koa-redis')({
-    // Options specified here
+    port:6379,
+    host:"10.234.106.147",
+    auth_pass:"xiaokeai"
 });
 
 var config=require('./config/config.js');
