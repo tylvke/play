@@ -1,22 +1,45 @@
-"use strict";
-
-var koa = require('koa');
-var app = koa();
+"use strict"
 var xtpl=require('xtpl/lib/koa');
-var router=require('koa-router');
 
-var api = router();
+var app = require('koa')(),
+    router = require('koa-router'),
+    serve = require('koa-static'),
+    views = require('koa-views');
 
-api.get('/', function *(){
-//    this.body = '就是爱玩a';
-    yield this.render('article/index',{"title":"就是爱玩"});
-});
+// Send static files
+app.use(serve('./public'));
 
-app
-    .use(api.routes())
-    .use(api.allowedMethods());
+// Use jade
+app.use(views(__dirname +'/views', 'jade', {}));
+
+// Router
+app.use(router(app));
+
+// This must come after last app.use()
+var server = require('http').Server(app.callback()),
+    io = require('socket.io')(server);
+
+/**
+ * Routes can go both before and after but
+ * app.use(router(app)); must be before
+ */
 xtpl(app,{
     views:'app/views',
     extname:"html"
 });
-app.listen(3000);
+
+app.get('/', function *(next) {
+    yield this.render('index', { my: 'data' });
+});
+
+// Socket.io
+io.on('connection', function(socket){
+    socket.emit('news', { hello: 'world' });
+    socket.on('my other event', function (data) {
+        console.log(data);
+    });
+});
+
+// Start the server
+server.listen(1337);
+console.info('Now running on localhost:1337');

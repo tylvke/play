@@ -2,6 +2,7 @@
 var path = require('path');
 var xtpl=require('xtpl/lib/koa');
 var koa = require('koa');
+var chatServer=require('./chatServer');
 var Router = require('koa-router');
 var bodyParser = require('koa-bodyparser');
 var render = require('koa-views');
@@ -19,6 +20,7 @@ var backendRoutes=require('./app/routes/backend');
 var response=require('./app/middlewares/response');
 var db=require("./db/db");
 let app=koa();
+var server=require('http').Server(app.callback());
 
 xtpl(app,{
     views:'app/views',
@@ -45,4 +47,9 @@ app.use(staticServer(path.join(__dirname,'public')))
     .use(backendRouter.allowedMethods())
     .use(frontendRouter.routes())
     .use(frontendRouter.allowedMethods());
-app.listen(config.PORT);
+
+chatServer(server);
+server.listen(config.PORT);
+
+
+

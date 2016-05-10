@@ -1,6 +1,6 @@
 "use strict"
 
-//var thunkify = require('thunkify-wrap');
+var thunkify = require('thunkify-wrap');
 
 var ArticleModel=require('../models/article');
 
@@ -11,15 +11,15 @@ exports.index=function *(){
 };
 
 exports.list=function *(){
-//    var articles=yield thunkify(ArticleModel.find,ArticleModel)();
-    var article={
-        title:"爱玩",
-        content:"就是爱玩"
-    };
-    yield ArticleModel.create(article,function(){});
-    var articles=yield ArticleModel.find({
-       title:"爱玩"
-    });
+    var articles=yield thunkify(ArticleModel.find,ArticleModel)();
+//    var article={
+//        title:"爱玩",
+//        content:"就是爱玩"
+//    };
+//    yield ArticleModel.create(article,function(){});
+//    var articles=yield ArticleModel.find({
+//       title:"爱玩"
+//    });
     this.send(articles,0);
 };
 

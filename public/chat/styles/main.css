@@ -1,0 +1,382 @@
+/* 清除内外边距 */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+fieldset,
+lengend,
+button,
+input,
+textarea,
+th,
+td {
+  /* table elements 表格元素 */
+  margin: 0;
+  padding: 0;
+}
+/* 设置默认字体 */
+body,
+button,
+input,
+select,
+textarea a {
+  /* for ie */
+  /*font: 12px/1 Tahoma, Helvetica, Arial, "宋体", sans-serif;*/
+  font: 12px/1 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+  /* 用 ascii 字符表示，使得在任何编码下都无问题 */
+}
+h1 {
+  font-size: 24px;
+  /* 18px / 12px = 1.5 */
+}
+h2 {
+  font-size: 18px;
+}
+h3 {
+  font-size: 14px;
+}
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+address,
+cite,
+dfn,
+em,
+var {
+  font-style: normal;
+}
+/* 将斜体扶正 */
+code,
+kbd,
+pre,
+samp,
+tt {
+  font-family: "Courier New", Courier, monospace;
+}
+/* 统一等宽字体 */
+small {
+  font-size: 12px;
+}
+/* 小于 12px 的中文很难阅读，让 small 正常化 */
+/* 重置列表元素 */
+ul,
+ol {
+  list-style: none;
+}
+/* 重置文本格式元素 */
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+abbr[title],
+acronym[title] {
+  /* 注：1.ie6 不支持 abbr; 2.这里用了属性选择符，ie6 下无效果 */
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+q:before,
+q:after {
+  content: '';
+}
+/* 重置表单元素 */
+legend {
+  color: #000;
+}
+/* for ie6 */
+fieldset,
+img {
+  border: none;
+}
+/* img 搭车：让链接里的 img 无边框 */
+/* 注：optgroup 无法扶正 */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 使得表单元素在 ie 下能继承字体大小 */
+}
+/* 重置表格元素 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* 重置 hr */
+hr {
+  border: none;
+  height: 1px;
+}
+html {
+  font-size: 62.5%;
+  -webkit-text-size-adjust: none;
+  overflow: hidden;
+  color: #333;
+}
+body {
+  height: 100%;
+  color: #333;
+  font-size: 1.6rem;
+  background: #eee;
+}
+#loginWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(5, 5, 5, 0.6);
+  text-align: center;
+  color: #fff;
+  font-size: 1.4rem;
+}
+#loginWrapper p {
+  margin-top: 50%;
+}
+#nickWrapper {
+  margin-top: 20px;
+}
+#nickWrapper input[type="text"] {
+  height: 26px;
+  border-radius: 2px;
+  border: 1px solid #eee;
+  padding: 2px 5px;
+}
+#nickWrapper input[type="button"] {
+  width: 50px;
+  height: 30px;
+  border: 1px solid #D6D6D6;
+  background: #fff;
+  border-radius: 2px;
+}
+.banner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  width: 100%;
+  border-bottom: 1px solid #D6D6D6;
+}
+.banner h1 {
+  font-size: 18px;
+}
+.controls {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid #D6D6D6;
+}
+.controls .msg-bar {
+  margin: 10px;
+  zoom: 1;
+  overflow: hidden;
+  padding-right: 70px;
+  padding-left: 80px;
+}
+.controls .msg-bar .main {
+  float: left;
+  width: 100%;
+}
+.controls .msg-bar .main .msg {
+  width: 100%;
+  border: 1px solid #D6D6D6;
+  outline: none;
+  padding: 2px 5px;
+  line-height: 1.5;
+  background: #fff;
+}
+.controls .msg-bar .msg-left {
+  float: left;
+  width: 70px;
+  height: 30px;
+  margin-left: -100%;
+  position: relative;
+  left: -80px;
+}
+.controls .msg-bar .msg-left .emoji {
+  float: left;
+  background: url(../images/icon.png) 0 -805px;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.controls .msg-bar .msg-left .image-file {
+  position: relative;
+  float: left;
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+}
+.controls .msg-bar .msg-left .image-file .img-btn {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(../images/icon.png) 0 -1638px;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.controls .msg-bar .msg-left .image-file .sendImage {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+.controls .msg-bar .msg-right {
+  float: left;
+  width: 50px;
+  margin-left: -50px;
+  position: relative;
+  right: -70px;
+}
+.controls .msg-bar .msg-right .send-btn {
+  width: 50px;
+  height: 30px;
+  border: 1px solid #D6D6D6;
+  border-radius: 2px;
+  font-size: 1.4rem;
+  background: #fff;
+}
+#historyMsg {
+  margin: 0;
+  width: 100%;
+  position: fixed;
+  top: 50px;
+  bottom: 50px;
+  color: #333;
+  overflow: auto !important;
+}
+#historyMsg .msg-content {
+  margin: 10px;
+  overflow: hidden;
+  text-align: left;
+  padding: 0 50px;
+}
+#historyMsg .msg-content .msg-info {
+  float: left;
+  width: 100%;
+}
+#historyMsg .msg-content .msg-info1 {
+  position: relative;
+  display: block;
+  background: #fff;
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  padding: 10px;
+}
+#historyMsg .msg-content .name {
+  position: relative;
+  float: left;
+  width: 50px;
+  height: 100%;
+  text-align: center;
+  margin-top: 2px;
+}
+#historyMsg .msg-content img {
+  float: left;
+}
+#historyMsg .sys-msg,
+#historyMsg .time {
+  margin: 10px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+}
+#historyMsg .sys-msg span,
+#historyMsg .time span {
+  color: #fff;
+  background: #DCDCDC;
+  padding: 5px 10px;
+}
+#historyMsg .msg-left .msg-info1 {
+  float: left;
+}
+#historyMsg .msg-left .msg-info1:before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 5px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-right: 5px solid #fff;
+  border-bottom: 5px solid transparent;
+}
+#historyMsg .msg-left .name {
+  margin-left: -100%;
+  left: -50px;
+}
+#historyMsg .msg-right .msg-info1 {
+  float: right;
+}
+#historyMsg .msg-right .msg-info1:after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 5px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-left: 5px solid #fff;
+  border-bottom: 5px solid transparent;
+}
+#historyMsg .msg-right .name {
+  margin-left: -50px;
+  right: -50px;
+}
+#historyMsg img {
+  max-width: 99%;
+  margin: 0 5px;
+}
+.timespan {
+  color: #fff;
+  background: #DCDCDC;
+}
+#emojiWrapper {
+  display: none;
+  width: 300px;
+  left: 10px;
+  bottom: 55px;
+  position: absolute;
+  background-color: #F2F2F2;
+  box-shadow: 0 0 10px #F2F2F2;
+}
+#emojiWrapper img {
+  margin: 2px;
+  padding: 2px;
+  width: 25px;
+  height: 25px;
+}
+#emojiWrapper img:hover {
+  background-color: blue;
+}
+.emoji {
+  display: inline;
+}
+footer {
+  text-align: center;
+}
