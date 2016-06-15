@@ -41,6 +41,7 @@ app.use(session({
 }));
 
 app.use(staticServer(path.join(__dirname,'public')))
+    .use(staticServer(path.join(__dirname,'dist')))
     .use(response())
     .use(bodyParser())
     .use(backendRouter.routes())

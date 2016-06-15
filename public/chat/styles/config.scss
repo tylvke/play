@@ -1,0 +1,14 @@
+$baseSize : 40px;
+$minFontSize : 14px/$baseSize;
+
+@function S($size) {
+  @return $size/$baseSize+rem
+}
+
+@function SF($size) {
+  @if $size/$baseSize>=$minFontSize{
+    @return $size/$baseSize+rem
+  } @else{
+    @return $minFontSize+rem;
+  }
+}

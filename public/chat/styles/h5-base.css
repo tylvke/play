@@ -1,0 +1,40 @@
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none; }
+
+body {
+  font-smoothing: antialiased; }
+
+a, input, textarea, select {
+  outline: 0; }
+
+a {
+  text-decoration: none;
+  color: #000; }
+
+.clearfix {
+  content: '';
+  display: table;
+  clear: both; }
+
+.icon {
+  vertical-align: middle;
+  display: inline-block;
+  background-position: center;
+  background-size: 100% auto;
+  background-repeat: no-repeat; }
+
+.btn:active {
+  opacity: .5;
+  transition: all 100ms; }
+
+body input[type="date"], body input[type="time"], body input[type="datetime"] {
+  display: flex !important;
+  align-items: center; }
+
+/*# sourceMappingURL=h5-base.css.map */

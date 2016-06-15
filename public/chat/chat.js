@@ -117,7 +117,6 @@ Chat.prototype = {
                 self._displayNewMsg('me', msg);
                 return;
             }
-            ;
         }, false);
         this.socket.on('newMsg', function (user, msg) {
             self._displayNewMsg(user, msg);

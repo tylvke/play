@@ -1,0 +1,1 @@
+d:\\redis\redis-server.exe
