@@ -64,7 +64,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
-	__webpack_require__(8)
+	__webpack_require__(2)
 	__vue_script__ = __webpack_require__(6)
 	__vue_template__ = __webpack_require__(7)
 	module.exports = __vue_script__ || {}
@@ -83,8 +83,46 @@
 	})()}
 
 /***/ },
-/* 2 */,
-/* 3 */,
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(3);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(5)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-0061f480&file=test.vue!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./test.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-0061f480&file=test.vue!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./test.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(4)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "html {\n  background: #eee; }\n", "", {"version":3,"sources":["/./src/components/test.vue.style"],"names":[],"mappings":"AAAA;EACE,iBAAiB,EAAE","file":"test.vue","sourcesContent":["html {\n  background: #eee; }\n"],"sourceRoot":"webpack://"}]);
+	
+	// exports
+
+
+/***/ },
 /* 4 */
 /***/ function(module, exports) {
 
@@ -369,16 +407,16 @@
 /* 6 */
 /***/ function(module, exports) {
 
-	'use strict';
+	// <template>
+	//     <div v-for="n in 10">div--{{msg}}11</div>
+	// </template>
+	//
+	// <script>
+	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	// <template>
-	//     <div v-for="n in 10">div</div>
-	// </template>
-	//
-	// <script>
 	exports.default = {
 	    data: function data() {
 	        return {
@@ -399,47 +437,7 @@
 /* 7 */
 /***/ function(module, exports) {
 
-	module.exports = "\r\n    <div v-for=\"n in 10\">div</div>\r\n";
-
-/***/ },
-/* 8 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(9);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(5)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-0061f480&file=test.vue!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./test.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js?sourceMap!./../../node_modules/vue-loader/lib/style-rewriter.js?id=_v-0061f480&file=test.vue!./../../node_modules/sass-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./test.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 9 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(4)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "html {\n  background: #eee; }\n", "", {"version":3,"sources":["/./src/components/test.vue.style"],"names":[],"mappings":"AAAA;EACE,iBAAiB,EAAE","file":"test.vue","sourcesContent":["html {\n  background: #eee; }\n"],"sourceRoot":"webpack://"}]);
-	
-	// exports
-
+	module.exports = "\r\n    <div v-for=\"n in 10\">div--{{msg}}11</div>\r\n";
 
 /***/ }
 /******/ ]);

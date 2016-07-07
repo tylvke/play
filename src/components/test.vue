@@ -1,8 +1,9 @@
 <template>
-    <div v-for="n in 10">div</div>
+    <div v-for="n in 10">div--{{msg}}</div>
 </template>
 
 <script>
+    "use strict";
     export default {
         data () {
             return {

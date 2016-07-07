@@ -9,7 +9,6 @@
         el: '#chat',
         data () {
             let serverData = store.fetch();
-
             return {
                 // 登录用户
                 user: serverData.user,
@@ -26,8 +25,8 @@
         computed: {
             session () {
                 return this.sessionList[this.sessionIndex];
-            }
-        },
+            },
+    },
         watch: {
             // 每当sessionList改变时，保存到localStorage中
             sessionList: {
@@ -61,13 +60,12 @@
     </div>
 </template>
 
-<style lang="less">
+<style lang="sass">
     #chat {
         overflow: hidden;
         border-radius: 3px;
-        
         .sidebar, .main {
-            height: 100%;   
+            height: 100%;
         }
         .sidebar {
             float: left;
